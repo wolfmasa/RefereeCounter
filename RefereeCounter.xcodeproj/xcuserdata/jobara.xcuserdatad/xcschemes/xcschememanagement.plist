@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>RefereeCounter WatchKit App (Complication).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>RefereeCounter WatchKit App (Notification).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>RefereeCounter WatchKit App.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>RefereeCounter.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DDA0EF9D1F4AF7070027975D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDA0EFB11F4AF7070027975D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDA0EFBC1F4AF7070027975D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DDA0EFC51F4AF7070027975D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
