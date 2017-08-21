@@ -23,6 +23,10 @@
 		DDA0EFE11F4AF7080027975D /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EFE01F4AF7080027975D /* NotificationController.swift */; };
 		DDA0EFE31F4AF7080027975D /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0EFE21F4AF7080027975D /* ComplicationController.swift */; };
 		DDA0EFE51F4AF7080027975D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA0EFE41F4AF7080027975D /* Assets.xcassets */; };
+		DDA0F0011F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */; };
+		DDA0F0021F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */; };
+		DDA0F0041F4B010C0027975D /* CounterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */; };
+		DDA0F0051F4B010C0027975D /* CounterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,8 @@
 		DDA0EFE21F4AF7080027975D /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		DDA0EFE41F4AF7080027975D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA0EFE61F4AF7080027975D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KickoffInterfaceController.swift; sourceTree = "<group>"; };
+		DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +208,8 @@
 				DDA0EFCB1F4AF7070027975D /* Interface.storyboard */,
 				DDA0EFCE1F4AF7070027975D /* Assets.xcassets */,
 				DDA0EFD01F4AF7070027975D /* Info.plist */,
+				DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */,
+				DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */,
 			);
 			path = "RefereeCounter WatchKit App";
 			sourceTree = "<group>";
@@ -350,6 +358,7 @@
 					DDA0EFC51F4AF7070027975D = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 9AW5SMH942;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					DDA0EFD41F4AF7080027975D = {
@@ -430,8 +439,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA0F0041F4B010C0027975D /* CounterInterfaceController.swift in Sources */,
 				DDA0EFA41F4AF7070027975D /* ViewController.swift in Sources */,
 				DDA0EFA21F4AF7070027975D /* AppDelegate.swift in Sources */,
+				DDA0F0011F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +466,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA0F0051F4B010C0027975D /* CounterInterfaceController.swift in Sources */,
+				DDA0F0021F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */,
 				DDA0EFE11F4AF7080027975D /* NotificationController.swift in Sources */,
 				DDA0EFE31F4AF7080027975D /* ComplicationController.swift in Sources */,
 				DDA0EFDF1F4AF7080027975D /* ExtensionDelegate.swift in Sources */,
@@ -647,13 +660,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9AW5SMH942;
 				IBSC_MODULE = RefereeCounter_WatchKit_Extension;
 				INFOPLIST_FILE = "RefereeCounter WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PJ.RefereeCounter.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.2;
@@ -665,9 +681,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9AW5SMH942;
 				IBSC_MODULE = RefereeCounter_WatchKit_Extension;
 				INFOPLIST_FILE = "RefereeCounter WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = PJ.RefereeCounter.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;

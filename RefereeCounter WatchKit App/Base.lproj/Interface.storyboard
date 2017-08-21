@@ -1,16 +1,56 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Kickoff Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="KickoffInterfaceController" customModule="RefereeCounter_WatchKit_Extension">
+                    <items>
+                        <label width="136" alignment="left" text="15 min" id="0Fo-mA-bzE"/>
+                        <slider width="1" alignment="left" value="15" minimum="5" maximum="45" steps="8" id="4c2-L9-TQI">
+                            <connections>
+                                <action selector="changeTimerCount:" destination="AgC-eL-Hgc" id="YJz-B3-HAI"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="center" verticalAlignment="center" title="Kick Off" id="08g-qt-IdP">
+                            <connections>
+                                <segue destination="MAL-Tu-xRG" kind="push" id="ynp-nw-Dll"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="timerCount" destination="0Fo-mA-bzE" id="mHC-E2-EXy"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Counter Interface Controller-->
+        <scene sceneID="UjJ-nl-nNn">
+            <objects>
+                <controller id="MAL-Tu-xRG" customClass="CounterInterfaceController" customModule="RefereeCounter_WatchKit_Extension">
+                    <items>
+                        <timer width="136" height="43" alignment="left" textAlignment="center" format="abbreviated" id="tgZ-pY-3Go">
+                            <fontDescription key="font" type="system" pointSize="23"/>
+                            <calendarUnit key="units" minute="YES" second="YES"/>
+                        </timer>
+                        <label width="136" alignment="left" text="Label" id="8lP-Jr-Ig9"/>
+                    </items>
+                    <connections>
+                        <outlet property="counter" destination="tgZ-pY-3Go" id="WP4-gf-Azm"/>
+                        <outlet property="testLabel" destination="8lP-Jr-Ig9" id="tzh-ab-tpb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="513" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -31,7 +71,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="RefereeCounter_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>
