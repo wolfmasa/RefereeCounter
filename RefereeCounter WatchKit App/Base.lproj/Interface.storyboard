@@ -22,7 +22,7 @@
                         </slider>
                         <button width="1" alignment="center" verticalAlignment="center" title="Kick Off" id="08g-qt-IdP">
                             <connections>
-                                <segue destination="MAL-Tu-xRG" kind="push" id="ynp-nw-Dll"/>
+                                <segue destination="MAL-Tu-xRG" kind="push" identifier="kickoff" id="ynp-nw-Dll"/>
                             </connections>
                         </button>
                     </items>
@@ -38,11 +38,21 @@
             <objects>
                 <controller id="MAL-Tu-xRG" customClass="CounterInterfaceController" customModule="RefereeCounter_WatchKit_Extension">
                     <items>
-                        <timer width="136" height="43" alignment="left" textAlignment="center" format="abbreviated" id="tgZ-pY-3Go">
+                        <timer width="136" height="43" alignment="left" textAlignment="center" id="tgZ-pY-3Go">
                             <fontDescription key="font" type="system" pointSize="23"/>
                             <calendarUnit key="units" minute="YES" second="YES"/>
                         </timer>
                         <label width="136" alignment="left" text="Label" id="8lP-Jr-Ig9"/>
+                        <button width="1" alignment="left" title="記録する" id="gbu-pg-lin">
+                            <connections>
+                                <action selector="inputText" destination="MAL-Tu-xRG" id="b5c-Av-ev2"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="参照する" id="KBf-OK-bO0">
+                            <connections>
+                                <segue destination="90l-sK-499" kind="push" id="1HQ-KH-Gsv"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="counter" destination="tgZ-pY-3Go" id="WP4-gf-Azm"/>
@@ -51,6 +61,33 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="513" y="345"/>
+        </scene>
+        <!--Record Interface Controller-->
+        <scene sceneID="ME5-ct-UTU">
+            <objects>
+                <controller id="90l-sK-499" customClass="RecordInterfaceController" customModule="RefereeCounter_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="Prc-Z2-ok7">
+                            <items>
+                                <tableRow identifier="MemoRow" id="HZK-xI-Nhi" customClass="MemoRow" customModule="RefereeCounter_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Sl7-i3-RUm">
+                                        <items>
+                                            <label width="136" height="31" alignment="left" text="Label" id="Shk-V1-CcG"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="memoLabel" destination="Shk-V1-CcG" id="mch-7b-3ci"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="memoTable" destination="Prc-Z2-ok7" id="5bN-vf-qjg"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="852" y="345"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

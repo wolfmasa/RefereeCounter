@@ -27,6 +27,10 @@
 		DDA0F0021F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */; };
 		DDA0F0041F4B010C0027975D /* CounterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */; };
 		DDA0F0051F4B010C0027975D /* CounterInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */; };
+		DDF103F31F4D3EF1003D639B /* RecordInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF103F21F4D3EF1003D639B /* RecordInterfaceController.swift */; };
+		DDF103F41F4D3EF1003D639B /* RecordInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF103F21F4D3EF1003D639B /* RecordInterfaceController.swift */; };
+		DDF103F61F4D4307003D639B /* MemoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF103F51F4D4307003D639B /* MemoRow.swift */; };
+		DDF103F71F4D4307003D639B /* MemoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF103F51F4D4307003D639B /* MemoRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +117,8 @@
 		DDA0EFE61F4AF7080027975D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KickoffInterfaceController.swift; sourceTree = "<group>"; };
 		DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterInterfaceController.swift; sourceTree = "<group>"; };
+		DDF103F21F4D3EF1003D639B /* RecordInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordInterfaceController.swift; sourceTree = "<group>"; };
+		DDF103F51F4D4307003D639B /* MemoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +216,8 @@
 				DDA0EFD01F4AF7070027975D /* Info.plist */,
 				DDA0F0001F4AFFBE0027975D /* KickoffInterfaceController.swift */,
 				DDA0F0031F4B010C0027975D /* CounterInterfaceController.swift */,
+				DDF103F21F4D3EF1003D639B /* RecordInterfaceController.swift */,
+				DDF103F51F4D4307003D639B /* MemoRow.swift */,
 			);
 			path = "RefereeCounter WatchKit App";
 			sourceTree = "<group>";
@@ -439,9 +447,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDF103F61F4D4307003D639B /* MemoRow.swift in Sources */,
 				DDA0F0041F4B010C0027975D /* CounterInterfaceController.swift in Sources */,
 				DDA0EFA41F4AF7070027975D /* ViewController.swift in Sources */,
 				DDA0EFA21F4AF7070027975D /* AppDelegate.swift in Sources */,
+				DDF103F31F4D3EF1003D639B /* RecordInterfaceController.swift in Sources */,
 				DDA0F0011F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,7 +480,9 @@
 				DDA0F0021F4AFFBE0027975D /* KickoffInterfaceController.swift in Sources */,
 				DDA0EFE11F4AF7080027975D /* NotificationController.swift in Sources */,
 				DDA0EFE31F4AF7080027975D /* ComplicationController.swift in Sources */,
+				DDF103F41F4D3EF1003D639B /* RecordInterfaceController.swift in Sources */,
 				DDA0EFDF1F4AF7080027975D /* ExtensionDelegate.swift in Sources */,
+				DDF103F71F4D4307003D639B /* MemoRow.swift in Sources */,
 				DDA0EFDD1F4AF7080027975D /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,6 +811,7 @@
 				DDA0EFEB1F4AF7080027975D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDA0EFED1F4AF7080027975D /* Build configuration list for PBXNativeTarget "RefereeCounter WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -807,6 +820,7 @@
 				DDA0EFEF1F4AF7080027975D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDA0EFF11F4AF7080027975D /* Build configuration list for PBXNativeTarget "RefereeCounter" */ = {
 			isa = XCConfigurationList;
@@ -815,6 +829,7 @@
 				DDA0EFF31F4AF7080027975D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDA0EFF41F4AF7080027975D /* Build configuration list for PBXNativeTarget "RefereeCounterTests" */ = {
 			isa = XCConfigurationList;
@@ -823,6 +838,7 @@
 				DDA0EFF61F4AF7080027975D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDA0EFF71F4AF7080027975D /* Build configuration list for PBXNativeTarget "RefereeCounterUITests" */ = {
 			isa = XCConfigurationList;
@@ -831,6 +847,7 @@
 				DDA0EFF91F4AF7080027975D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

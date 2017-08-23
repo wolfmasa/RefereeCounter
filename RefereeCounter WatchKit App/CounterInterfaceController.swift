@@ -13,9 +13,15 @@ import Foundation
 class CounterInterfaceController: WKInterfaceController {
 
     @IBOutlet var counter: WKInterfaceTimer!
-
     @IBOutlet var testLabel: WKInterfaceLabel!
 
+    var startDate: Date! = nil
+    var timer: Timer! = nil
+    
+    var memoList: [String] = []
+    var memoListDate: [Date] = []
+    var scoreA = 0
+    var scoreB = 0
     
     func update(tm: Timer) -> Void{
         print("update")
@@ -33,16 +39,33 @@ class CounterInterfaceController: WKInterfaceController {
             testLabel.setText("not found")
         }
         
-        let startDate = Date().addingTimeInterval(interval)
+        startDate = Date().addingTimeInterval(interval)
         
         counter.setDate(startDate)
         counter.start()
 
-        let timer = Timer.scheduledTimer(withTimeInterval: startDate.timeIntervalSinceNow, repeats: false,
+        timer = Timer.scheduledTimer(withTimeInterval: startDate.timeIntervalSinceNow, repeats: false,
                                          block: self.update)
-
     }
     
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+        return [memoList, memoListDate]
+    }
+    
+    @IBAction func inputText() {
+        
+        let suggestions: Array<String>! = ["チームAの得点", "チームBの得点","警告", "退場"]
+        self.presentTextInputController(withSuggestions: suggestions, allowedInputMode: .plain, completion: {
+            (objects: [Any]?) -> Void in
+            // 入力されたテキスト内容を処理する
+            print(objects)
+            let text = objects?.first as! String
+            self.memoList.append(text)
+            self.memoListDate.append(Date())
+            
+            self.dismissTextInputController()
+        })
+    }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -54,6 +77,7 @@ class CounterInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
         counter.stop()
+        timer.invalidate()
     }
 
 }
