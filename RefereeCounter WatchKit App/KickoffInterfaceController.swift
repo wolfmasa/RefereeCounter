@@ -14,15 +14,21 @@ class KickoffInterfaceController: WKInterfaceController {
 
     @IBOutlet var timerCount: WKInterfaceLabel!
     
+    // デフォルトは15とする
+    var timeCount = 15
     
     @IBAction func changeTimerCount(_ value: Float) {
-        let v = Int(value)
-        timerCount.setText("\(v) min")
+        timeCount = Int(value)
+        timerCount.setText("\(timeCount) min")
     }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+    }
+    
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
+            return timeCount
     }
 
     override func willActivate() {

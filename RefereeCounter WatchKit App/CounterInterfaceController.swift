@@ -25,11 +25,20 @@ class CounterInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        let date = Date().addingTimeInterval(10)
-        //counter.setDate(date)
+        var interval: Double = 15 * 60
+        if let countTime = context as? Int{
+            interval = Double(countTime * 60)
+            testLabel.setText("\(countTime) min")
+        } else{
+            testLabel.setText("not found")
+        }
+        
+        let startDate = Date().addingTimeInterval(interval)
+        
+        counter.setDate(startDate)
         counter.start()
 
-        let timer = Timer.scheduledTimer(withTimeInterval: date.timeIntervalSinceNow, repeats: false,
+        let timer = Timer.scheduledTimer(withTimeInterval: startDate.timeIntervalSinceNow, repeats: false,
                                          block: self.update)
 
     }
@@ -38,11 +47,13 @@ class CounterInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        counter.start()
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+        counter.stop()
     }
 
 }
